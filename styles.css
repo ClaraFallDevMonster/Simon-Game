@@ -41,7 +41,7 @@ body {
   border-color: #a40d84;
 }
 
-.blau {
+.blue {
   background: url(img/SweetCat.png);
   background-position: center center;
   background-size: cover;
@@ -55,7 +55,7 @@ body {
   border-color: #24afd2;
 }
 
-.rosa {
+.rose {
   background: url(img/Kitten.png);
   background-position: center center;
   background-size: cover;
@@ -63,6 +63,7 @@ body {
 }
 
 .pressed {
-  box-shadow: 0 0 20px white;
+  opacity: 30%;
+  box-shadow: 5px 5px 10px white;
   background-color: grey;
 }
