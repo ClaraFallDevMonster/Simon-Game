@@ -50,7 +50,7 @@ function checkAnswer(currentLevel) {
 
 function nextSequence() {
 
-userClickedPattern = [];;
+userClickedPattern = [];
   level++;
   $("#level-title").text("Level " + level);
 
