@@ -6,13 +6,31 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
-  }
-});
+let text;
+if (window.matchMedia("(max-width: 700px)").matches) {
+  text = "Tap the Background to start";
+} else {
+  text = "Press a key to start";
+}
+
+if (window.matchMedia("(max-width: 700px)").matches) {
+  $(document).click(function() {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+} else {
+  $(document).keypress(function() {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+}
+document.getElementById("level-title").innerHTML = text;
 
 $(".btn").click(function() {
   var userChosenColor = $(this).attr("id");
@@ -45,6 +63,7 @@ function checkAnswer(currentLevel) {
     $("#level-title").text("Game Over, Press any Key to Restart");
 
     startOver();
+
   }
 }
 
